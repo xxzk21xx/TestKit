@@ -9,7 +9,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && apt-get update
 
 # Download and install Microsoft ODBC Driver 13 for SQL Server
-RUN wget https://download.microsoft.com/download/4/9/5/4956849c-f4f7-4c2c-8c01-4c2f946a6d17/msodbcsql_13.1.9.2-1_amd64.deb \
+RUN wget https://packages.microsoft.com/debian/8/prod/pool/main/m/msodbcsql/msodbcsql_13.1.9.2-1_amd64.deb \
     && ACCEPT_EULA=Y dpkg -i msodbcsql_13.1.9.2-1_amd64.deb \
     && rm msodbcsql_13.1.9.2-1_amd64.deb
 
