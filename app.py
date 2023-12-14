@@ -20,4 +20,5 @@ def index():
     return render_template('index.html', results=None, request=request)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 8080)) # Use PORT env var if it's set, otherwise default to 8080
+    app.run(host='0.0.0.0', port=port)
