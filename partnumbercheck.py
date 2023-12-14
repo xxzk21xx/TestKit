@@ -9,7 +9,7 @@ class DatabaseConnection:
         self.conn = self.connect()
 
     def connect(self):
-        return pyodbc.connect(f'DRIVER={{ODBC Driver 13 for SQL Server}};SERVER={self.server};DATABASE={self.database};Trusted_Connection=yes')
+        return pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={self.server};DATABASE={self.database};Trusted_Connection=yes')
 
     def close(self):
         if self.conn:
