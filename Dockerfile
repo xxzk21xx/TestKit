@@ -1,4 +1,4 @@
-FROM python:3.9-stretch
+FROM python:3.9
 
 # Update and install necessary packages
 RUN apt-get update && apt-get install -y unixodbc unixodbc-dev gpg wget
