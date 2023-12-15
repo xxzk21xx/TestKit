@@ -10,7 +10,7 @@ class DatabaseConnection:
 
     def connect(self):
         return pyodbc.connect(
-            f'DRIVER={{ODBC Driver 18 for SQL Server}};'
+            f'DRIVER={{ODBC Driver 13 for SQL Server}};'
             f'SERVER={self.server};'
             f'DATABASE={self.database};'
             f'UID=PartRelease_Reader;'
