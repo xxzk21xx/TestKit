@@ -1,5 +1,8 @@
 FROM python:3.7-stretch
 
+RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list \
+    && sed -i 's/security.debian.org/archive.debian.org/g' /etc/apt/sources.list
+
 # Update and install necessary packages
 RUN apt-get update && apt-get install -y \
     unixodbc \
