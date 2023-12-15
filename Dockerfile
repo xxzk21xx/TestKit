@@ -1,4 +1,4 @@
-FROM python:3.9-stretch
+FROM python:3.7-stretch
 
 # Update and install necessary packages
 RUN apt-get update && apt-get install -y \
