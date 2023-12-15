@@ -19,16 +19,11 @@ RUN apt-get update && apt-get install -y \
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 
-# Optional: Install the unixODBC development headers
-# This is already being installed above, no need to install twice
-# RUN apt-get install -y unixodbc-dev
-
 # Copy the .deb file from your build context into the image
-# Make sure the .deb file is in the same directory as the Dockerfile on your host
-COPY msodbcsql_13.1.9.2.1_amd64.deb /tmp/msodbcsql_13.1.9.2.1_amd64.deb
+COPY msodbcsql_13.1.9.2-1_amd64.deb /tmp/msodbcsql_13.1.9.2-1_amd64.deb
 
 # Install the .deb package
-RUN ACCEPT_EULA=Y dpkg -i /tmp/msodbcsql_13.1.9.2.1_amd64.deb || apt-get install -f
+RUN ACCEPT_EULA=Y dpkg -i /tmp/msodbcsql_13.1.9.2-1_amd64.deb || apt-get install -f
 
 WORKDIR /app
 COPY . /app
