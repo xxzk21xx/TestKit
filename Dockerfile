@@ -10,11 +10,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql17 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y netcat-openbsd
+    
 
 WORKDIR /app
 COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
-RUN apt-get install -y netcat
 
 EXPOSE 8080
 CMD ["python", "app.py"]
