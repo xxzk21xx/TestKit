@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     unixodbc-dev \
     gnupg2 \
     curl \
-    netcat
+    netcat-openbsd
 
 # Set the working directory inside the container to /app
 WORKDIR /app
