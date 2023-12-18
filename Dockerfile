@@ -1,10 +1,11 @@
 FROM python:3.9
 
-# Install unixODBC and the required Microsoft ODBC 18 Driver for SQL Server
+# Install unixODBC, the required Microsoft ODBC 17 Driver for SQL Server, and telnet
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg \
     unixodbc \
     unixodbc-dev \
+    telnet \  # Added telnet here
     && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
