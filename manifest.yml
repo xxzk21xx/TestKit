@@ -1,0 +1,14 @@
+---
+applications:
+- name: Kit-To-Kit         # Replace with your actual application name
+  memory: 512M                 # Adjust the memory limit as needed
+  instances: 1                 # Number of application instances
+  path: .                      # Path to your application
+  buildpacks:
+    - python_buildpack         # Python buildpack
+  env:
+    PORT: 8080                 # The port your application runs on
+    # Add other necessary environment variables here, especially those related to database connections
+  services:
+    - EV1VSQL08.US.Bosch.com   # Bind to SQL database service, replace with actual service name
+  command: "python app.py"     # Command to start your application
